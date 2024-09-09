@@ -1,37 +1,65 @@
 ---
-title: Introduction
-nav: Intro
+title: How to Record and Edit a Podcast
+nav: podcasting
 ---
+In this tutorial, we will cover the basics of using the open-source software [Audacity](https://www.audacityteam.org/) to record and edit a podcast.
+## 1. Preparation
+Turn on the audio interface **Scarlett 18i20** (if it's not already on). If pressing the power switch does not turn it on, first power on the **Furman M-8X** located below the **Scarlett 18i20**.
 
-`workshop-template-b` is a Jekyll project to create a simple workshop website, with a [Bootstrap](https://getbootstrap.com/)-based theme, designed for hosting on [GitHub Pages](https://pages.github.com/) (or similar static web options!).
+{% include figure.html img="powerswitch.jpg" alt="Power Switch" caption="Power Switch" %}
 
-It works best for about five pages of instructions, plus home page, all written in Markdown. 
-The navigation to the main pages is exposed at top and bottom of each page for easy stepping through the lessons.
+Turn the gain knob for **Input 1** all the way to the right. If recording a two-person podcast, repeat this process for **Input 2**.
 
-### Why?
+{% include figure.html img="gain.jpg" alt="Gain Knobs" caption="Gain Knobs" %}
 
-Rather than making slides for a workshop, why not make a website? 
-It's easier to write, access, share, and reuse. 
-GitHub and GitHub Pages makes this pretty easy.
+Open **Audacity**, which can be accessed in the **Launchpad**.
 
-It is a great [Open Educational Resource](https://en.wikipedia.org/wiki/Open_educational_resources) since anyone can make a copy and adapt!
+{% include figure.html img="launchpad.png" alt="Launchpad" caption="Launchpad" %}
 
-## GitHub Pages 
+Ensure that both the input and output are set to the default **Scarlett 18i20 USB**. For a two-person podcast, make sure the recording channel is set to **2 (Stereo) Recording Channels**.
 
-One amazingly useful GitHub feature is [GitHub Pages](https://guides.github.com/features/pages/).
-It provides free static web hosting from any repository.
-GH-Pages is intended to host relatively simple sites for your GitHub portfolio, project, or documentation.
-Because it is free and a valuable transferable skill, this is a great option for teaching and learning.
+{% include figure.html img="inputoutput.png" alt="Input and Output" caption="Input and Output" %}
 
-Many organizations are using GitHub to collaboratively create and publish public workshop websites. 
-For example: 
+To test your microphone, begin speaking at a comfortable level. Pay attention to the **Recording Meter Toolbar**. The bars remain green until the signal reaches -12 dB then merge to yellow as the signal approaches -6 dB, which is a good maximum signal level to aim for.
 
-- [Programming Historian](http://programminghistorian.org/)
-- [Software Carpentry](https://software-carpentry.org/), [Data Carpentry](http://www.datacarpentry.org/), [Library Carpentry](https://librarycarpentry.org/)
-- this site!
+{% include figure.html img="recordingmeter.png" alt="Recording Meter" caption="Recording Meter" %}
 
-{% capture text %}Note:
-There are *soft* limits and guidelines for gh-pages usage: sites should be < 1GB, use < 100GB bandwidth per month, and make < 10 builds per hour.
-If your site exceeds these quotas, GitHub will send you a notice asking you to modify the repository.
-All content must follow the [community guidelines](https://help.github.com/articles/github-community-guidelines/), e.g. no violence, obscene sex, or illegal stuff.{% endcapture %}
-{% include alert.html text=text color=secondary %}
+## 2. **Recording**
+To record, press the red **Record** button.![image](https://user-images.githubusercontent.com/67883371/97648213-6c611500-1a11-11eb-993d-2ff3d0fc2dfa.png){% include figure.html img="record.png" alt="Record Button" caption="Record Button" %}
+
+To stop recording, press the spacebar or the **Stop** button.{% include figure.html img="stop.png" alt="Stop Button" caption="Stop Button" %}
+
+If you're recording with two microphones simultaneously, Audacity will create a single track with two channels: input 1 on the left channel and input 2 on the right channel.
+
+{% include figure.html img="recordingtrack.png" alt="Recording Track" caption="Recording Track" %}
+
+## 3. **Editing**
+To delete any unwanted sounds, such as "Um", "uh", "mm" and other filler sounds and words, use the **Selection** tool to select the portion and press the delete key on the keyboard.
+{% include figure.html img="selection.gif" alt="Selection Tool" caption="Selection Tool" %}
+
+To create two individual clips from a single clip, use the **Split** command located under **Edit > Clip Boundaries > Split**.
+
+{% include figure.html img="split.png" alt="Split" caption="Split" %}
+
+To change the position of an audio clip in time, use the **Time Shift** tool and drag it forward or backward on the track.
+
+{% include figure.html img="timeshift.png" alt="Time Shift Tool" caption="Time Shift Tool" %}
+
+To fade in and fade out, such as intro and outro music tracks, and make micro-adjustments to the audio files, use the **Envelope** tool.
+
+{% include figure.html img="envelope.gif" alt="Envelope Tool" caption="Envelope Tool" %}
+
+If you have recorded with two microphones simultaneously, go to **Audio Track> Split Stereo to Mono** to edit the tracks separately.
+
+{% include figure.html img="splittracks.png" alt="Split Stereo to Mono" caption="Split Stereo to Mono" %}
+
+After finishing your editing, go to **Tracks > Mix > Mix and Render to New Track** and then delete the old tracks. This ensures that the sound will play from both monitors. Otherwise, the left monitor will only output the left channel, and the right monitor will only output the right channel.
+
+{% include figure.html img="mixtracks.png" alt="Mix and Render to New Track" caption="Mix and Render to New Track" %}
+
+## 4. **Exporting**
+To export, go to **File > Export > Export as WAV**.
+
+{% include figure.html img="export.png" alt="Export" caption="Export" %}
+
+Once exported, your episode is ready to be uploaded to a podcast hosting service like Libsyn, Anchor, or Podbean.
